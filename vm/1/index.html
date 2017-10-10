@@ -76,6 +76,31 @@
       </ul>
     </section>
 
+    <section class="slide">
+      <h2>As a layer of an application or part of an API</h2>
+      <p>If you are familiar with the literature, you can end up building out Jitting infrastructure, GC, OSR, Deopt, multithreading, tuning parameters, stack layout optimisation, playing with instruction encoding for code density, macroinstructions, polymorphic inline caches, dynamic recompilation...</p>
+    </section>
+
+    <section class="slide">
+      <h2>'General' runtimes</h2>
+      <ul>
+        <li>JVMs - OpenJDK, j9, Hotspot etc</li>
+        <li>CLR, Parrot</li>
+        <li>Qbrt</li>
+        <li>Truffle/Graal, OMR, ZetaVM, Rubinius, PyPy, Dis, Mu VM...</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <p> Parsing is a 'solved enough' problem. There is still a lot of interesting work, but for most things you can just use a parser combinator library or write a PEG and run that through a code generator. Very few of the problems in practical VM writing are. </p>
+    </section>
+
+    <section class="slide">
+      <h2> ??? </h2>
+      <p> We are reimplementing things again and again and again. Many foundational projects are MLOC balls of C++. The cost to implement some of these things is astronomical. It takes a number of cycles for things to make it into the mainstream.</p>
+      <p> Strongtalk was a commercial environment that had Jitting in 1996 based on optimistic specialisation with type feedback and deoptimisation. This was based on work on Self in about 1990. </p>
+    </section>
+
     <!-- End slides. -->
 
     <!-- Begin extension snippets. Add or remove as needed. -->
