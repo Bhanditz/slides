@@ -51,24 +51,25 @@
     <section class="slide">
       <h2>For a specific language</h2>
       <ul>
-        <li>Python CPython, Ruby MRI/Rubinius, Perl, Lua, Flash Tamarin, JS V8 etc, even PHP (kindof)</li>
+        <li>Most famous early examples: Smalltalk, Lisp and Self all had early bytecode VMs. Pascal p-code, and Forth interpreters.</li>
+        <li>Java JVM (initially), Python CPython, Ruby MRI/Rubinius, Perl, Lua, Flash Tamarin, JS V8 etc, even PHP (kindof)</li>
         <li>(Usually) an evolution, after starting as (usually) an AST walking interpreter</li>
         <li>Better risk/reward than writing a compiler that targets raw machine code</li>
+        <li>Sometimes you have other baggage as well, such as image based VMs.</li>
       </ul>
     </section>
 
     <section class="slide">
       <h2>As a layer of an application or part of an API</h2>
       <ul>
-        <li>Z-machine (Infocom)</li>
-        <li>The Lost Vikings</li>
-        <li>JS template rendering library '<a href="https://www.linkedin.com/pulse/glimmers-optimizing-compiler-chad-hietala/">Glimmer</a>'</li>
+        <li>Z-machine (Infocom) <div class="slide"> For portability</div></li>
+        <li>The Lost Vikings <div class="slide"> To fit in memory</div></li>
+        <li>JS template rendering library '<a href="https://www.linkedin.com/pulse/glimmers-optimizing-compiler-chad-hietala/">Glimmer</a>' <div class="slide"> Diffing, speed, wire size</div></li>
       </ul>
     </section>
 
     <section class="slide">
       <h2>As a layer of an application or part of an API</h2>
-      <p>Some </p>
       <ul>
         <li>I wrote an opengl based UI toolkit which was mostly a bytecode VM whose bytecodes were rendering tasks</li>
         <li>In fact, lots of rendering middleware uses this approach - Apple's Metal APIs, for example.</li>
@@ -87,18 +88,20 @@
         <li>JVMs - OpenJDK, j9, Hotspot etc</li>
         <li>CLR, Parrot</li>
         <li>Qbrt</li>
-        <li>Truffle/Graal, OMR, ZetaVM, Rubinius, PyPy, Dis, Mu VM...</li>
+        <li>Truffle/Graal, OMR, ZetaVM, Rubinius, PyPy, Mu VM...</li>
+        <li>Dis</li>
       </ul>
     </section>
 
     <section class="slide">
-      <p> Parsing is a 'solved enough' problem. There is still a lot of interesting work, but for most things you can just use a parser combinator library or write a PEG and run that through a code generator. Very few of the problems in practical VM writing are. </p>
+      <h2>Conclusion?</h2>
+      <blockquote> Parsing is an example of a 'solved enough' problem. There is still a lot of interesting work, but for most things you can just use a parser combinator library or write a PEG and run that through a code generator. Very few of things you end up wanting in practical VM writing are 'solved enough' problems. </blockquote>
     </section>
 
     <section class="slide">
-      <h2> ??? </h2>
+      <h2> Conclusion??? </h2>
       <p> We are reimplementing things again and again and again. Many foundational projects are MLOC balls of C++. The cost to implement some of these things is astronomical. It takes a number of cycles for things to make it into the mainstream.</p>
-      <p> Strongtalk was a commercial environment that had Jitting in 1996 based on optimistic specialisation with type feedback and deoptimisation. This was based on work on Self in about 1990. </p>
+      <p> There are things in the Self and Strongtalk VMs that we still have trouble implementing in smaller projects today. </p>
     </section>
 
     <!-- End slides. -->
